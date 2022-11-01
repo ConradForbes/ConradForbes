@@ -509,7 +509,7 @@ section {
 
 .websiteimgcontainer img {
     height: 100%;
-    width: fit-content;
+    width: auto;
     margin: 0 auto;
 }
 
@@ -527,7 +527,7 @@ section {
 .brainimgcontainer img {
     height: 30%;
     object-fit: cover;
-    width: fit-content;
+    width: auto;
     margin: 0 auto;
 }
 
@@ -540,7 +540,7 @@ section {
 
 .exoimgcontainer img {
     height: 80%;
-    width: fit-content;
+    width: auto;
     margin: 20% auto;
 }
 
@@ -558,7 +558,7 @@ section {
 .handimgcontainer img {
     height: 30%;
     object-fit: cover;
-    width: fit-content;
+    width: auto;
     margin: 0 auto;
 }
 
@@ -576,7 +576,7 @@ section {
 .osimgcontainer img {
     height: 45%;
     object-fit: cover;
-    width: fit-content;
+    width: auto;
     margin: 0 auto;
 }
 
@@ -594,7 +594,7 @@ section {
 .signalimgcontainer img {
     height: 30%;
     object-fit: cover;
-    width: fit-content;
+    width: auto;
     margin: 0 auto;
 }
 
