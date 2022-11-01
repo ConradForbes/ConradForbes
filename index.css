@@ -180,8 +180,6 @@ section {
     width: 60vw;
     min-height: 80vh;
     margin: auto auto auto 5vw;
-    overflow: scroll;
-    scrollbar-color: rgb(0, 39, 95) white;
 }
 
 /* .page2textcontainer2 { */
@@ -472,7 +470,14 @@ section {
     width: 70%;
     /* border: orange 2px solid;  */
     overflow: scroll;
-    scrollbar-color: dark;
+}
+
+.slidetext::-webkit-scrollbar-track {
+    background: rgb(0, 39, 95);
+}
+
+.slidetext::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255);
 }
 
 .slidetext p{
