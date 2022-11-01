@@ -181,6 +181,7 @@ section {
     min-height: 80vh;
     margin: auto auto auto 5vw;
     overflow: scroll;
+    scrollbar-color: dark;
 }
 
 /* .page2textcontainer2 { */
@@ -471,6 +472,7 @@ section {
     width: 70%;
     /* border: orange 2px solid;  */
     overflow: scroll;
+    scrollbar-color: dark;
 }
 
 .slidetext p{
