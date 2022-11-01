@@ -181,7 +181,7 @@ section {
     min-height: 80vh;
     margin: auto auto auto 5vw;
     overflow: scroll;
-    scrollbar-color: dark;
+    scrollbar-color: rgb(0, 39, 95) white;
 }
 
 /* .page2textcontainer2 { */
