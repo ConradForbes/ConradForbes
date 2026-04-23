@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conrad Forbes - Data Engineer and Front-End Developer based in London. Building precise, scalable data systems.">
+  <title>Conrad Forbes — Data Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="#hero" class="nav-logo" aria-label="Conrad Forbes — home">CF</a>
+      <ul class="nav-links" role="list">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="assets/Conrad_Forbes_CV.pdf" class="nav-cv" download aria-label="Download CV">
+            <span>CV</span>
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+              <path d="M5 1v6M2 5l3 3 3-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+            <!-- Sun (shown in dark mode) -->
+            <svg class="icon-sun" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+              <circle cx="7.5" cy="7.5" r="3" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M7.5 1v1.5M7.5 12.5V14M1 7.5h1.5M12.5 7.5H14M2.9 2.9l1.06 1.06M11.04 11.04l1.06 1.06M2.9 12.1l1.06-1.06M11.04 3.96l1.06-1.06" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            <!-- Moon (shown in light mode) -->
+            <svg class="icon-moon" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+              <path d="M12.5 9A5.5 5.5 0 016 2.5a5.5 5.5 0 100 10 5.5 5.5 0 006.5-3.5z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Scroll progress line -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section id="hero" class="section-hero" aria-label="Introduction">
+      <div class="hero-grid">
+
+        <div class="hero-content">
+          <div class="hero-tag reveal-load">
+            <span class="tag-pip"></span>
+            <span class="tag-mono">London &middot; Data Engineer</span>
+          </div>
+
+          <div class="hero-identity">
+            <h1 class="hero-name">
+              <div class="line-wrap"><span class="line-inner">Conrad</span></div>
+              <div class="line-wrap"><span class="line-inner">Forbes</span></div>
+            </h1>
+            <div class="hero-age-block">
+              <span class="hero-age-num" id="hero-age"></span>
+            </div>
+          </div>
+
+          <p class="hero-statement reveal-load">
+            Precise by training.<br>Deliberate by habit.
+          </p>
+
+          <div class="hero-actions reveal-load">
+            <a href="#contact" class="btn-primary">Get in touch</a>
+            <a href="assets/Conrad_Forbes_CV.pdf" class="btn-ghost" download>
+              Download CV
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <svg class="node-graph" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Grid substrate -->
+            <g class="graph-grid" opacity="0.35">
+              <line x1="0" y1="96"  x2="480" y2="96"  stroke="currentColor" stroke-width="0.5"/>
+              <line x1="0" y1="192" x2="480" y2="192" stroke="currentColor" stroke-width="0.5"/>
+              <line x1="0" y1="288" x2="480" y2="288" stroke="currentColor" stroke-width="0.5"/>
+              <line x1="0" y1="384" x2="480" y2="384" stroke="currentColor" stroke-width="0.5"/>
+              <line x1="96"  y1="0" x2="96"  y2="480" stroke="currentColor" stroke-width="0.5"/>
+              <line x1="192" y1="0" x2="192" y2="480" stroke="currentColor" stroke-width="0.5"/>
+              <line x1="288" y1="0" x2="288" y2="480" stroke="currentColor" stroke-width="0.5"/>
+              <line x1="384" y1="0" x2="384" y2="480" stroke="currentColor" stroke-width="0.5"/>
+            </g>
+            <!-- Edges -->
+            <g class="graph-edges">
+              <line class="graph-edge" x1="96"  y1="96"  x2="192" y2="192" stroke="currentColor" stroke-width="1"/>
+              <line class="graph-edge" x1="288" y1="96"  x2="192" y2="192" stroke="currentColor" stroke-width="1"/>
+              <line class="graph-edge" x1="192" y1="192" x2="96"  y2="288" stroke="currentColor" stroke-width="1"/>
+              <line class="graph-edge" x1="192" y1="192" x2="288" y2="288" stroke="currentColor" stroke-width="1.5"/>
+              <line class="graph-edge" x1="384" y1="192" x2="288" y2="288" stroke="currentColor" stroke-width="1"/>
+              <line class="graph-edge" x1="288" y1="288" x2="192" y2="384" stroke="currentColor" stroke-width="1"/>
+              <line class="graph-edge" x1="288" y1="288" x2="384" y2="384" stroke="currentColor" stroke-width="1"/>
+              <line class="graph-edge" x1="96"  y1="288" x2="96"  y2="384" stroke="currentColor" stroke-width="0.75"/>
+            </g>
+            <!-- Nodes -->
+            <g class="graph-nodes">
+              <circle class="graph-node" cx="96"  cy="96"  r="3"  fill="currentColor"/>
+              <circle class="graph-node" cx="288" cy="96"  r="3"  fill="currentColor"/>
+              <circle class="graph-node" cx="192" cy="192" r="5"  fill="currentColor"/>
+              <circle class="graph-node" cx="384" cy="192" r="3"  fill="currentColor"/>
+              <circle class="graph-node" cx="96"  cy="288" r="3"  fill="currentColor"/>
+              <circle class="graph-node primary-node" cx="288" cy="288" r="6"  fill="currentColor"/>
+              <circle class="graph-node" cx="192" cy="384" r="3"  fill="currentColor"/>
+              <circle class="graph-node" cx="384" cy="384" r="3"  fill="currentColor"/>
+              <circle class="graph-node" cx="96"  cy="384" r="2.5" fill="currentColor"/>
+            </g>
+            <!-- Primary node halo -->
+            <circle cx="288" cy="288" r="14" stroke="currentColor" stroke-width="0.75" fill="none" opacity="0.5"/>
+            <circle cx="288" cy="288" r="22" stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.25" stroke-dasharray="3 6"/>
+          </svg>
+        </div>
+
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <div class="scroll-line-track">
+          <div class="scroll-line-fill"></div>
+        </div>
+        <span class="scroll-label">Scroll</span>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         NARRATIVE — Chapter 01: Origin
+    ============================================================ -->
+    <section class="chapter" id="chapter-origin" data-chapter="01" aria-label="Chapter 01: Origin">
+      <div class="chapter-inner">
+        <div class="chapter-meta" aria-hidden="true">
+          <span class="chapter-number">01</span>
+          <span class="chapter-label">Origin</span>
+        </div>
+        <div class="chapter-body">
+          <h2 class="chapter-heading">
+            <div class="line-wrap"><span class="line-inner">Aberdeen,</span></div>
+            <div class="line-wrap"><span class="line-inner">Scotland.</span></div>
+          </h2>
+          <div class="chapter-text">
+            <p>Some people arrive at engineering through a textbook. I arrived through curiosity - a persistent need to understand how systems work, why they fail, and what it would take to make them better.</p>
+            <p>Growing up in the north-east of Scotland, I was drawn early to problems that demanded patience. Not quick answers. Considered ones.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         NARRATIVE — Chapter 02: Formation
+    ============================================================ -->
+    <section class="chapter chapter-alt" id="chapter-formation" data-chapter="02" aria-label="Chapter 02: Formation">
+      <div class="chapter-inner">
+        <div class="chapter-meta" aria-hidden="true">
+          <span class="chapter-number">02</span>
+          <span class="chapter-label">Formation</span>
+        </div>
+        <div class="chapter-body">
+          <h2 class="chapter-heading">
+            <div class="line-wrap"><span class="line-inner">Trained as</span></div>
+            <div class="line-wrap"><span class="line-inner italic-line">an engineer.</span></div>
+            <div class="line-wrap"><span class="line-inner">Taught to think</span></div>
+            <div class="line-wrap"><span class="line-inner italic-line">like a scientist.</span></div>
+          </h2>
+          <div class="chapter-text">
+            <p>Two degrees. Two institutions. One consistent thread: learning to hold complexity at multiple scales simultaneously and not collapse it prematurely into a simple answer.</p>
+            <p>Engineering teaches you that the gap between a working system and a broken one is rarely dramatic. It's usually a constraint you hadn't accounted for.</p>
+          </div>
+          <div class="education-list" aria-label="Education">
+            <div class="edu-item">
+              <span class="edu-type">BEng</span>
+              <div class="edu-detail">
+                <span class="edu-degree">Biomedical Engineering</span>
+                <span class="edu-school">University of Surrey</span>
+              </div>
+            </div>
+            <div class="edu-item">
+              <span class="edu-type">MSc</span>
+              <div class="edu-detail">
+                <span class="edu-degree">Biomaterials &amp; Tissue Engineering</span>
+                <span class="edu-school">University College London</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         NARRATIVE — Chapter 03: The Lab (Featured)
+    ============================================================ -->
+    <section class="chapter chapter-lab" id="chapter-lab" data-chapter="03" aria-label="Chapter 03: The Lab">
+
+      <!-- Cellular scaffold background motif -->
+      <div class="lab-motif" aria-hidden="true">
+        <svg class="cell-svg" viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle class="cell-ring cell-ring-1" cx="350" cy="350" r="280" stroke="currentColor" stroke-width="0.75"/>
+          <circle class="cell-ring cell-ring-2" cx="350" cy="350" r="200" stroke="currentColor" stroke-width="0.75"/>
+          <circle class="cell-ring cell-ring-3" cx="350" cy="350" r="120" stroke="currentColor" stroke-width="1"/>
+          <circle class="cell-ring cell-ring-4" cx="350" cy="350" r="40"  stroke="currentColor" stroke-width="1.5"/>
+          <circle class="cell-ring cell-ring-5" cx="350" cy="350" r="340" stroke="currentColor" stroke-width="0.5" stroke-dasharray="5 12"/>
+
+          <!-- Radial spokes -->
+          <g class="cell-spokes" opacity="0.6">
+            <line x1="350" y1="70"  x2="350" y2="630" stroke="currentColor" stroke-width="0.5"/>
+            <line x1="70"  y1="350" x2="630" y2="350" stroke="currentColor" stroke-width="0.5"/>
+            <line x1="152" y1="152" x2="548" y2="548" stroke="currentColor" stroke-width="0.5"/>
+            <line x1="548" y1="152" x2="152" y2="548" stroke="currentColor" stroke-width="0.5"/>
+          </g>
+
+          <!-- Lattice nodes -->
+          <g class="cell-nodes" fill="currentColor">
+            <circle cx="350" cy="70"  r="3"/>
+            <circle cx="350" cy="630" r="3"/>
+            <circle cx="70"  cy="350" r="3"/>
+            <circle cx="630" cy="350" r="3"/>
+            <circle cx="152" cy="152" r="3"/>
+            <circle cx="548" cy="152" r="3"/>
+            <circle cx="152" cy="548" r="3"/>
+            <circle cx="548" cy="548" r="3"/>
+            <circle cx="350" cy="150" r="2.5"/>
+            <circle cx="350" cy="550" r="2.5"/>
+            <circle cx="150" cy="350" r="2.5"/>
+            <circle cx="550" cy="350" r="2.5"/>
+            <circle cx="350" cy="350" r="5"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="chapter-inner">
+        <div class="chapter-meta" aria-hidden="true">
+          <span class="chapter-number">03</span>
+          <span class="chapter-label">The Lab</span>
+        </div>
+        <div class="chapter-body">
+          <h2 class="chapter-heading">
+            <div class="line-wrap"><span class="line-inner">Growing meat</span></div>
+            <div class="line-wrap"><span class="line-inner">from scratch.</span></div>
+          </h2>
+          <div class="chapter-text">
+            <p>Before data, there was biology. My first significant research work was in cell-based agriculture - developing cellulose scaffolds from brewing industry by-products as substrates for cultured meat production.</p>
+            <p>The work lived at the intersection of material science, biology, and process engineering. We were building structures at the microscale to support living tissue. Precision mattered at every order of magnitude.</p>
+            <p>It taught me that the most interesting problems are rarely owned by a single discipline - and that the people who move between them tend to see things others miss.</p>
+          </div>
+          <div class="lab-tags" aria-label="Research domains">
+            <span class="lab-tag">Cell-based agriculture</span>
+            <span class="lab-tag">Biomaterial scaffolds</span>
+            <span class="lab-tag">Circular bioeconomy</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         NARRATIVE — Chapter 04: The Shift
+    ============================================================ -->
+    <section class="chapter" id="chapter-shift" data-chapter="04" aria-label="Chapter 04: The Shift">
+      <div class="chapter-inner">
+        <div class="chapter-meta" aria-hidden="true">
+          <span class="chapter-number">04</span>
+          <span class="chapter-label">The Shift</span>
+        </div>
+        <div class="chapter-body">
+          <h2 class="chapter-heading">
+            <div class="line-wrap"><span class="line-inner">From molecules</span></div>
+            <div class="line-wrap"><span class="line-inner">to systems.</span></div>
+          </h2>
+          <div class="chapter-text">
+            <p>The move from biotech into data engineering wasn't a departure. It was a translation. The same rigour that makes good lab science makes good data infrastructure: reproducibility, traceability, understanding exactly what you're measuring and why.</p>
+            <p>Data became the medium. The underlying way of thinking - systems, constraints, cause and effect - stayed the same.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Subtle transition motif: single diagonal rule -->
+      <div class="shift-motif" aria-hidden="true"></div>
+    </section>
+
+
+    <!-- ============================================================
+         NARRATIVE — Chapter 05: Systems at Scale
+    ============================================================ -->
+    <section class="chapter chapter-alt" id="chapter-systems" data-chapter="05" aria-label="Chapter 05: Systems at Scale">
+      <div class="chapter-inner">
+        <div class="chapter-meta" aria-hidden="true">
+          <span class="chapter-number">05</span>
+          <span class="chapter-label">Systems at Scale</span>
+        </div>
+        <div class="chapter-body">
+          <h2 class="chapter-heading">
+            <div class="line-wrap"><span class="line-inner">Building what</span></div>
+            <div class="line-wrap"><span class="line-inner">organisations</span></div>
+            <div class="line-wrap"><span class="line-inner">run on.</span></div>
+          </h2>
+          <div class="chapter-text">
+            <p>At KPMG, I work across data platforms, reporting pipelines, and automation workflows at enterprise scale. The work is less about individual cleverness and more about building systems that others can trust, understand, and extend.</p>
+            <p>Good data infrastructure is invisible. It just works. Getting there requires judgment about trade-offs, not just technical execution.</p>
+          </div>
+          <div class="skills-grid" aria-label="Technical skills">
+            <div class="skill-group">
+              <span class="skill-group-label">Data</span>
+              <ul role="list">
+                <li>Pipeline architecture</li>
+                <li>Data modelling</li>
+                <li>ETL / ELT workflows</li>
+                <li>Reporting systems</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <span class="skill-group-label">Engineering</span>
+              <ul role="list">
+                <li>Python · SQL · dbt</li>
+                <li>Azure · Databricks</li>
+                <li>Automation</li>
+                <li>Version control</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <span class="skill-group-label">Front End</span>
+              <ul role="list">
+                <li>HTML · CSS · JS</li>
+                <li>React</li>
+                <li>Performance</li>
+                <li>Interaction design</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SELECTED WORK
+    ============================================================ -->
+    <section id="work" class="section-work" aria-label="Selected work">
+      <div class="section-inner">
+        <div class="section-header">
+          <span class="section-label">Selected Work</span>
+          <h2 class="section-title">
+            <div class="line-wrap"><span class="line-inner">Projects that</span></div>
+            <div class="line-wrap"><span class="line-inner">required depth.</span></div>
+          </h2>
+        </div>
+
+        <div class="work-grid">
+
+          <article class="work-card" aria-label="Project: Cellulose Scaffolds for Cultured Meat">
+            <div class="card-header">
+              <span class="card-index">01</span>
+              <span class="card-type">Research · Biomaterials</span>
+            </div>
+            <h3 class="card-title">Cellulose Scaffolds for Cultured Meat</h3>
+            <p class="card-context">MSc Research — UCL · 2021–22</p>
+            <p class="card-description">Developed biodegradable cellulose scaffolds from brewing industry by-products as growth substrates for cultivated muscle tissue. Work involved characterising scaffold porosity, mechanical properties, and cell adhesion behaviour across multiple iterations.</p>
+            <p class="card-outcome">A low-cost, circular-economy scaffold substrate addressing a key manufacturing cost barrier in cultivated meat production.</p>
+            <div class="card-tags" aria-label="Tags">
+              <span>Biomaterials</span>
+              <span>Cell culture</span>
+              <span>Circular bioeconomy</span>
+            </div>
+          </article>
+
+          <article class="work-card" aria-label="Project: Enterprise Data Platform">
+            <div class="card-header">
+              <span class="card-index">02</span>
+              <span class="card-type">Data Engineering · Enterprise</span>
+            </div>
+            <h3 class="card-title">Enterprise Data Platform Delivery</h3>
+            <p class="card-context">KPMG · 2023–Present</p>
+            <p class="card-description">Designed and delivered end-to-end data pipelines and transformation layers supporting analytics and reporting across large client organisations. Included schema design, pipeline orchestration, data quality validation, and stakeholder-facing reporting systems.</p>
+            <p class="card-outcome">Measurably improved data reliability and reduced time-to-insight across multiple business-critical functions.</p>
+            <div class="card-tags" aria-label="Tags">
+              <span>Python</span>
+              <span>Azure</span>
+              <span>dbt</span>
+              <span>SQL</span>
+            </div>
+          </article>
+
+          <article class="work-card" aria-label="Project: Automated Reporting Workflow">
+            <div class="card-header">
+              <span class="card-index">03</span>
+              <span class="card-type">Automation · Reporting</span>
+            </div>
+            <h3 class="card-title">Automated Reporting Workflow</h3>
+            <p class="card-context">KPMG · 2024</p>
+            <p class="card-description">Built an automated pipeline replacing a recurring manual reporting process. The system ingests structured and semi-structured data, applies validated transformation logic, and produces distributable outputs on schedule - with exception alerting for anomalies.</p>
+            <p class="card-outcome">Eliminated several hours of weekly manual effort and removed a category of human-error risk from a high-visibility client process.</p>
+            <div class="card-tags" aria-label="Tags">
+              <span>Automation</span>
+              <span>Python</span>
+              <span>Orchestration</span>
+            </div>
+          </article>
+
+          <article class="work-card" aria-label="Project: Data Visualisation Interface">
+            <div class="card-header">
+              <span class="card-index">04</span>
+              <span class="card-type">Front End · Product</span>
+            </div>
+            <h3 class="card-title">Data Visualisation Interface</h3>
+            <p class="card-context">Applied · 2024</p>
+            <p class="card-description">Designed and built a bespoke front-end interface for exploring and presenting pipeline data outputs. Focused on information hierarchy clarity, responsive layout, and interaction fidelity - without framework overhead. Built to be handed to non-technical stakeholders cold.</p>
+            <p class="card-outcome">A working presentation tool that required no onboarding. Data spoke for itself.</p>
+            <div class="card-tags" aria-label="Tags">
+              <span>JavaScript</span>
+              <span>CSS</span>
+              <span>Data visualisation</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         ABOUT / PRINCIPLES
+    ============================================================ -->
+    <section id="about" class="section-about" aria-label="About Conrad Forbes">
+      <div class="section-inner">
+        <div class="about-grid">
+
+          <div class="about-left">
+            <span class="section-label">About</span>
+            <h2 class="about-heading">
+              <div class="line-wrap"><span class="line-inner">Built for</span></div>
+              <div class="line-wrap"><span class="line-inner">hard problems.</span></div>
+            </h2>
+          </div>
+
+          <div class="about-right">
+            <div class="about-bio">
+              <p>I'm a data engineer and front-end developer with an unusual background. I started in biomedical engineering, spent time doing materials research in biotech, and eventually found my way to data systems - where I've worked ever since.</p>
+              <p>Currently at KPMG, I build data platforms, pipelines, and automation workflows that real organisations depend on. At that scale, the quality of your decisions matters more than the speed of your execution.</p>
+              <p>Outside work, I rowed for Team GB. The discipline that requires - managing performance across months of preparation, staying effective when conditions are bad, knowing when to push and when to hold - shapes how I approach engineering work more than any course I've taken.</p>
+              <p>I'm currently training for Ironman. Same logic applies.</p>
+            </div>
+
+            <div class="principles">
+              <h3 class="principles-heading">How I build</h3>
+              <ul class="principles-list" role="list">
+                <li>
+                  <span class="principle-rule">Correctness before speed.</span>
+                  A fast pipeline that produces wrong numbers is worse than no pipeline at all.
+                </li>
+                <li>
+                  <span class="principle-rule">Understand the system, not just the task.</span>
+                  Most engineering problems are downstream effects of upstream decisions.
+                </li>
+                <li>
+                  <span class="principle-rule">Design for the next person.</span>
+                  Code that only its author can maintain is a liability, not an asset.
+                </li>
+                <li>
+                  <span class="principle-rule">Simplicity is the work.</span>
+                  Complexity is easy. Clarity takes sustained effort.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         CONTACT
+    ============================================================ -->
+    <section id="contact" class="section-contact" aria-label="Contact">
+      <div class="section-inner">
+        <div class="contact-inner">
+
+          <div class="contact-header">
+            <span class="section-label">Contact</span>
+            <h2 class="contact-heading">
+              <div class="line-wrap"><span class="line-inner">Let's talk.</span></div>
+            </h2>
+            <p class="contact-sub">Open to senior data engineering, platform engineering, and AI-adjacent roles. Particularly interested in teams doing technically serious work at scale.</p>
+          </div>
+
+          <div class="contact-body">
+            <a href="mailto:conradforbes3@gmail.com" class="contact-email">
+              conradforbes3@gmail.com
+            </a>
+            <nav class="contact-links" aria-label="External links">
+              <a href="https://linkedin.com/in/conradforbes" class="contact-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://github.com/conradforbes" class="contact-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="assets/Conrad_Forbes_CV.pdf" class="contact-link" download>Download CV</a>
+            </nav>
+          </div>
+
+        </div>
+      </div>
+
+      <footer class="site-footer" aria-label="Site footer">
+        <span>© 2025 Conrad Forbes</span>
+        <span>London, UK</span>
+      </footer>
+    </section>
+
+  </main>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
