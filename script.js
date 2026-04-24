@@ -48,9 +48,8 @@
     if (!toggle) return;
 
     /* Determine initial theme: saved preference → system preference → light */
-    const saved      = localStorage.getItem('cf-theme');
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initial    = saved || (systemDark ? 'dark' : 'light');
+    const saved   = localStorage.getItem('cf-theme');
+    const initial = saved || 'dark';
 
     applyTheme(initial);
 
