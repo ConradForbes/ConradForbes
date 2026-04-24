@@ -206,7 +206,7 @@ button {
   display: block;
   overflow: hidden;
   line-height: 1.05;
-  padding-bottom: 0.04em; /* prevent descender clip */
+  padding-bottom: 0.2em; /* prevent descender clip on large display type */
 }
 
 .line-inner {
@@ -831,9 +831,9 @@ button {
   }
 }
 
-/* Chapter 02 has longer heading lines — scale down so they stay single-line */
+/* Chapter 02 — larger than the old reduced size, still safe for the longer lines */
 #chapter-formation .chapter-heading {
-  font-size: clamp(22px, 3.2vw, 42px);
+  font-size: clamp(36px, 5.8vw, 72px);
 }
 
 /* Hero graph — primary hub node */
@@ -1309,6 +1309,10 @@ body,
   .chapter-inner {
     grid-template-columns: 1fr;
     gap: var(--s-md);
+  }
+
+  #chapter-origin .chapter-inner {
+    grid-template-columns: 1fr;
   }
 
   .chapter-meta {
