@@ -572,6 +572,95 @@
   }
 
   /* ============================================================
+     14a. NAV GRADIENT — cursor-following spotlight across the header bar
+  ============================================================ */
+  function initNavGradient() {
+    if (prefersReducedMotion) return;
+
+    const navInner = document.querySelector('.nav-inner');
+    if (!navInner) return;
+
+    /* Target logo + nav links; leave .nav-cv alone (has its own hover style) */
+    const targets = Array.from(
+      navInner.querySelectorAll('.nav-logo, .nav-links a:not(.nav-cv)')
+    );
+    if (!targets.length) return;
+
+    let targetRects = [];
+
+    function updatePosition(e) {
+      targets.forEach((el, i) => {
+        const rect = targetRects[i];
+        if (!rect) return;
+        el.style.setProperty('--cursor-x', (e.clientX - rect.left) + 'px');
+        el.style.setProperty('--cursor-y', (e.clientY - rect.top)  + 'px');
+      });
+    }
+
+    navInner.addEventListener('mouseenter', (e) => {
+      targetRects = targets.map(el => el.getBoundingClientRect());
+      updatePosition(e);
+      navInner.classList.add('gradient-active');
+    });
+
+    navInner.addEventListener('mousemove', updatePosition);
+
+    navInner.addEventListener('mouseleave', () => {
+      navInner.classList.remove('gradient-active');
+      targets.forEach(el => {
+        el.style.setProperty('--cursor-x', '-9999px');
+        el.style.setProperty('--cursor-y', '-9999px');
+      });
+    });
+  }
+
+  /* ============================================================
+     14. HEADING GRADIENTS — cursor-following spotlight on all
+         large display headings (hero name, chapter, section, etc.)
+  ============================================================ */
+  function initHeadingGradients() {
+    if (prefersReducedMotion) return;
+
+    const headings = document.querySelectorAll(
+      '.hero-name, .chapter-heading, .section-title, .about-heading, .contact-heading'
+    );
+
+    headings.forEach(heading => {
+      const lineInners = Array.from(heading.querySelectorAll('.line-inner'));
+      if (!lineInners.length) return;
+
+      let lineRects = [];
+
+      /* Per-line offset so the gradient flows as one seamless spotlight
+         across all lines in the heading. */
+      function updatePosition(e) {
+        lineInners.forEach((line, i) => {
+          const rect = lineRects[i];
+          if (!rect) return;
+          line.style.setProperty('--cursor-x', (e.clientX - rect.left) + 'px');
+          line.style.setProperty('--cursor-y', (e.clientY - rect.top)  + 'px');
+        });
+      }
+
+      heading.addEventListener('mouseenter', (e) => {
+        lineRects = lineInners.map(line => line.getBoundingClientRect());
+        updatePosition(e);
+        heading.classList.add('gradient-active');
+      });
+
+      heading.addEventListener('mousemove', updatePosition);
+
+      heading.addEventListener('mouseleave', () => {
+        heading.classList.remove('gradient-active');
+        lineInners.forEach(line => {
+          line.style.setProperty('--cursor-x', '-9999px');
+          line.style.setProperty('--cursor-y', '-9999px');
+        });
+      });
+    });
+  }
+
+  /* ============================================================
      INIT
   ============================================================ */
   function init() {
@@ -590,6 +679,8 @@
     initAboutSection();
     initContactSection();
     initShiftChapter();
+    initNavGradient();
+    initHeadingGradients();
 
     window.addEventListener('load', () => { ScrollTrigger.refresh(); });
   }

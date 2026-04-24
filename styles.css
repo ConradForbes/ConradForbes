@@ -114,6 +114,48 @@ button {
   letter-spacing: -0.02em;
   color: var(--text);
   margin-bottom: 16px;
+  cursor: default;
+}
+
+/* Cursor-following gradient spotlight — all large display headings.
+   The ::before echoes the text with a radial gradient clipped to text shapes,
+   overlaid on top of the unchanged base colour. */
+.hero-name .line-inner,
+.chapter-heading .line-inner,
+.section-title .line-inner,
+.about-heading .line-inner,
+.contact-heading .line-inner {
+  position: relative;
+}
+
+.hero-name .line-inner::before,
+.chapter-heading .line-inner::before,
+.section-title .line-inner::before,
+.about-heading .line-inner::before,
+.contact-heading .line-inner::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0 0 -0.25em 0; /* extend below line box to cover descenders (g, y, p…) */
+  background: radial-gradient(
+    circle 260px at var(--cursor-x, -9999px) var(--cursor-y, -9999px),
+    var(--hot) 0%,
+    var(--electric) 50%,
+    transparent 75%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero-name.gradient-active .line-inner::before,
+.chapter-heading.gradient-active .line-inner::before,
+.section-title.gradient-active .line-inner::before,
+.about-heading.gradient-active .line-inner::before,
+.contact-heading.gradient-active .line-inner::before {
+  opacity: 1;
 }
 
 .hero-age-block {
@@ -206,7 +248,7 @@ button {
   display: block;
   overflow: hidden;
   line-height: 1.05;
-  padding-bottom: 0.2em; /* prevent descender clip on large display type */
+  padding-bottom: 0.3em; /* prevent descender clip on large display type */
 }
 
 .line-inner {
@@ -298,8 +340,6 @@ button {
   transition: opacity var(--dur-fast) var(--ease-out);
 }
 
-.nav-logo:hover { opacity: 0.5; }
-
 .nav-brand {
   display: flex;
   align-items: center;
@@ -329,7 +369,38 @@ button {
   transition: color var(--dur-fast) var(--ease-out);
 }
 
-.nav-links a:hover { color: var(--text); }
+.nav-links a:not(.nav-cv):hover { color: var(--text); }
+
+/* Nav gradient spotlight — tracks cursor across the whole nav bar */
+.nav-logo,
+.nav-links a:not(.nav-cv) {
+  position: relative;
+  display: inline-block; /* gives ::before a reliable containing block */
+}
+
+.nav-logo::before,
+.nav-links a:not(.nav-cv)::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0 0 -0.15em 0;
+  background: radial-gradient(
+    circle 120px at var(--cursor-x, -9999px) var(--cursor-y, -9999px),
+    var(--hot) 0%,
+    var(--electric) 55%,
+    transparent 80%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.nav-inner.gradient-active .nav-logo::before,
+.nav-inner.gradient-active .nav-links a:not(.nav-cv)::before {
+  opacity: 1;
+}
 
 .nav-cv {
   display: flex;
