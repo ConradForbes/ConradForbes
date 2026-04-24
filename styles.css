@@ -347,12 +347,30 @@ button {
 }
 
 .nav-built {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-family: var(--font-mono);
   font-size: 10px;
   font-weight: 300;
   letter-spacing: 0.06em;
   color: var(--text-faint);
   opacity: 0.6;
+}
+
+.nav-built-sep {
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.nav-built-text {
+  line-height: 1.45;
+}
+
+/* Single line on desktop, two lines on mobile */
+.nav-built-text br { display: none; }
+@media (max-width: 600px) {
+  .nav-built-text br { display: inline; }
 }
 
 .nav-links {
