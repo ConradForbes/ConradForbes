@@ -618,7 +618,7 @@ button {
 .skills-grid {
   margin-top: var(--s-lg);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--s-sm);
   border-top: 1px solid var(--border);
   padding-top: var(--s-md);
@@ -702,11 +702,12 @@ button {
 
 /* Lab tags */
 .lab-tags {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: var(--s-xs);
   margin-top: var(--s-lg);
   opacity: 0;
+  max-width: 480px;
 }
 
 .lab-tag {
@@ -719,6 +720,120 @@ button {
   padding: 6px 12px;
   border-radius: 2px;
   background: rgba(var(--electric-rgb), 0.05);
+}
+
+/* ============================================================
+   CHAPTER 01 — ORIGIN MAP
+============================================================ */
+
+/* Widen origin chapter-inner to include map column */
+#chapter-origin .chapter-inner {
+  grid-template-columns: 200px 1fr 180px;
+  align-items: center;
+}
+
+.origin-map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;          /* faded in by JS */
+  pointer-events: none;
+  align-self: center;
+}
+
+.uk-map-svg {
+  width: 100%;
+  max-width: 160px;
+  color: var(--text-faint);
+  overflow: visible;
+}
+
+.uk-outline {
+  opacity: 0.35;
+  transition: stroke 0.35s ease;
+}
+
+/* Route line — JS sets stroke-dasharray/dashoffset for draw animation */
+.uk-route {
+  stroke: var(--hot);
+  stroke-width: 1.5;
+  opacity: 0.9;
+  stroke-dasharray: 600; /* overridden by JS */
+  stroke-dashoffset: 600;
+}
+
+/* Start node (Aberdeen) */
+.map-node-start {
+  fill: var(--text-faint);
+  opacity: 0;           /* fades in at start of animation */
+}
+
+/* End node (London) + halo */
+.map-node-end {
+  fill: var(--hot);
+  opacity: 0;           /* appears when route completes */
+}
+
+.map-halo-end {
+  stroke: var(--hot);
+  opacity: 0;
+}
+
+/* Labels */
+.map-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  fill: var(--text-faint);
+}
+
+.map-label-end {
+  fill: var(--hot);
+  opacity: 0;           /* appears with London node */
+}
+
+/* Caption below map */
+.map-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  opacity: 0;           /* appears at end */
+}
+
+.map-caption-dist {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--hot);
+  letter-spacing: 0.04em;
+}
+
+.map-caption-rule {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 300;
+  color: var(--text-faint);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Hide map on tablet/mobile */
+@media (max-width: 1024px) {
+  #chapter-origin .chapter-inner {
+    grid-template-columns: 140px 1fr;
+  }
+
+  .origin-map {
+    display: none;
+  }
+}
+
+/* Chapter 02 has longer heading lines — scale down so they stay single-line */
+#chapter-formation .chapter-heading {
+  font-size: clamp(22px, 3.2vw, 42px);
 }
 
 /* Hero graph — primary hub node */
@@ -1170,6 +1285,7 @@ body,
   .contact-inner {
     grid-template-columns: 1fr;
   }
+
   .contact-body {
     padding-top: 0;
   }
@@ -1336,8 +1452,18 @@ body,
   .contact-body,
   .hero-scroll,
   .hero-visual,
-  .cell-svg {
+  .cell-svg,
+  .origin-map,
+  .map-node-start,
+  .map-node-end,
+  .map-halo-end,
+  .map-label-end,
+  .map-caption {
     opacity: 1 !important;
+  }
+
+  .uk-route {
+    stroke-dashoffset: 0 !important;
   }
 }
 
@@ -1401,4 +1527,9 @@ html[data-theme="dark"] .scroll-line-fill {
 /* Shift motif line on dark */
 html[data-theme="dark"] .shift-motif {
   background: var(--border-strong);
+}
+
+/* Map outline slightly brighter on dark */
+html[data-theme="dark"] .uk-outline {
+  opacity: 0.25;
 }

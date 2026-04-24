@@ -77,7 +77,7 @@
           </div>
 
           <p class="hero-statement reveal-load">
-            Precise by training.<br>Deliberate by habit.
+            Structured in approach.<br>Comfortable with complexity.
           </p>
 
           <div class="hero-actions reveal-load">
@@ -156,10 +156,88 @@
             <div class="line-wrap"><span class="line-inner">Scotland.</span></div>
           </h2>
           <div class="chapter-text">
-            <p>Some people arrive at engineering through a textbook. I arrived through curiosity - a persistent need to understand how systems work, why they fail, and what it would take to make them better.</p>
-            <p>Growing up in the north-east of Scotland, I was drawn early to problems that demanded patience. Not quick answers. Considered ones.</p>
+            <p>My interest in engineering came less from a formal path and more from curiosity. I was always drawn to understanding how systems work, why they sometimes fail, and what could make them work better.</p>
+            <p>Growing up in the north-east of Scotland, where the oil industry was part of the backdrop, engineering always felt close at hand. I found myself drawn to problems that took patience to solve, and to work that rewarded careful thought more than quick answers.</p>
           </div>
         </div>
+
+        <!-- Animated UK route map — desktop only -->
+        <div class="origin-map" aria-hidden="true">
+          <!--
+            Projection: x = (lon+6)/8×180+10,  y = (58.8−lat)/9×430+10
+            viewBox 0 0 200 440  (10 px margin each side)
+            Key nodes: Aberdeen (57.15°N 2.09°W) → x=98 y=89
+                       London   (51.50°N 0.12°W) → x=142 y=359
+          -->
+          <svg class="uk-map-svg" viewBox="0 0 200 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+            <!--
+              Great Britain outline — clockwise from Cape Wrath (NW Scotland).
+              ~65 real coastal landmarks, Moray Firth swept with a quadratic bezier.
+            -->
+            <path class="uk-outline" stroke="currentColor" stroke-width="0.65" fill="none"
+              d="
+                M 33,18
+                L 52,12 L 69,16 L 76,18
+                L 76,27 L 63,42 L 62,55
+                Q 42,70 70,62
+                L 105,72
+                L 98,89
+                L 90,109
+                L 88,131
+                L 85,141 L 77,144 L 89,144
+                L 100,154
+                L 111,189 L 117,205 L 131,214 L 143,233
+                L 148,257
+                L 153,283 L 156,295 L 162,290 L 173,288
+                L 183,303 L 184,310
+                L 176,334
+                L 177,362 L 176,374
+                L 170,384
+                L 155,388 L 137,390 L 124,393
+                L 113,403
+                L 82,409 L 53,423
+                L 57,416
+                L 73,381
+                L 80,371
+                L 87,361 L 71,364
+                L 56,353
+                L 25,340
+                L 53,315 L 54,302 L 47,294 L 50,283 L 45,269
+                L 66,274
+                L 78,268 L 76,248 L 73,234 L 64,213
+                L 64,194
+                L 49,204 L 38,209
+                L 38,183 L 43,173 L 39,165
+                L 42,155 L 30,160 L 16,177
+                L 26,155
+                L 23,121
+                L 5,109 L 14,95
+                L 17,62 L 26,53
+                Z
+              "/>
+
+            <!-- Route: Aberdeen → London, following east coast curve -->
+            <path class="uk-route" fill="none" stroke-linecap="round" stroke-linejoin="round"
+              d="M 98,89 C 120,180 138,280 142,359"/>
+
+            <!-- Aberdeen node -->
+            <circle class="map-node map-node-start" cx="98" cy="89" r="3.5"/>
+            <text class="map-label map-label-start" x="90" y="84" text-anchor="end">Aberdeen</text>
+
+            <!-- London node + halo -->
+            <circle class="map-halo-end" cx="142" cy="359" r="10" fill="none" stroke-width="0.75"/>
+            <circle class="map-node map-node-end" cx="142" cy="359" r="4"/>
+            <text class="map-label map-label-end" x="151" y="364" text-anchor="start">London</text>
+
+          </svg>
+
+          <div class="map-caption">
+            <span class="map-caption-dist">500 mi</span>
+            <span class="map-caption-rule">Aberdeen → London</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -175,14 +253,15 @@
         </div>
         <div class="chapter-body">
           <h2 class="chapter-heading">
-            <div class="line-wrap"><span class="line-inner">Trained as</span></div>
-            <div class="line-wrap"><span class="line-inner italic-line">an engineer.</span></div>
-            <div class="line-wrap"><span class="line-inner">Taught to think</span></div>
-            <div class="line-wrap"><span class="line-inner italic-line">like a scientist.</span></div>
+            <div class="line-wrap"><span class="line-inner">Engineering gave me a</span></div>
+            <div class="line-wrap"><span class="line-inner italic-line">practical foundation.</span></div>
+            <div class="line-wrap"><span class="line-inner">Science taught me to</span></div>
+            <div class="line-wrap"><span class="line-inner">approach problems with</span></div>
+            <div class="line-wrap"><span class="line-inner italic-line">curiosity, rigour, and care.</span></div>
           </h2>
           <div class="chapter-text">
-            <p>Two degrees. Two institutions. One consistent thread: learning to hold complexity at multiple scales simultaneously and not collapse it prematurely into a simple answer.</p>
-            <p>Engineering teaches you that the gap between a working system and a broken one is rarely dramatic. It's usually a constraint you hadn't accounted for.</p>
+            <p>Across two degrees at two different institutions, the common thread was learning to work with complexity at multiple scales, without forcing it into an easy answer too quickly.</p>
+            <p>That mindset now shapes how I approach data, systems, and teams: starting by understanding the context, the constraints, and the trade-offs before deciding what to simplify.</p>
           </div>
           <div class="education-list" aria-label="Education">
             <div class="edu-item">
@@ -257,14 +336,15 @@
             <div class="line-wrap"><span class="line-inner">from scratch.</span></div>
           </h2>
           <div class="chapter-text">
-            <p>Before data, there was biology. My first significant research work was in cell-based agriculture - developing cellulose scaffolds from brewing industry by-products as substrates for cultured meat production.</p>
-            <p>The work lived at the intersection of material science, biology, and process engineering. We were building structures at the microscale to support living tissue. Precision mattered at every order of magnitude.</p>
-            <p>It taught me that the most interesting problems are rarely owned by a single discipline - and that the people who move between them tend to see things others miss.</p>
+            <p>Before working in data, I spent time in biology. My first substantial research project was in cell-based agriculture, looking at how to use brewing by-products to create cellulose scaffolds for cultured meat.</p>
+            <p>The work sat between materials science, biology, and process engineering. We were designing structures at the microscale to support living tissue, where small details made a noticeable difference.</p>
+            <p>It made me more comfortable working between disciplines, and more aware of how much perspective you gain by looking at a problem from different angles.</p>
           </div>
           <div class="lab-tags" aria-label="Research domains">
             <span class="lab-tag">Cell-based agriculture</span>
             <span class="lab-tag">Biomaterial scaffolds</span>
             <span class="lab-tag">Circular bioeconomy</span>
+            <span class="lab-tag">Lab Grown Meat</span>
           </div>
         </div>
       </div>
@@ -286,8 +366,8 @@
             <div class="line-wrap"><span class="line-inner">to systems.</span></div>
           </h2>
           <div class="chapter-text">
-            <p>The move from biotech into data engineering wasn't a departure. It was a translation. The same rigour that makes good lab science makes good data infrastructure: reproducibility, traceability, understanding exactly what you're measuring and why.</p>
-            <p>Data became the medium. The underlying way of thinking - systems, constraints, cause and effect - stayed the same.</p>
+            <p>Moving from biotech into data engineering did not feel like starting again, more like applying the same way of thinking in a different context. The habits that mattered in the lab, such as reproducibility, traceability and clarity about what you are measuring, turned out to matter just as much in reporting, analysis and data infrastructure.</p>
+            <p>Data became the medium, but the underlying mindset stayed familiar: understand the system, work within constraints and make decisions that hold up in practice.</p>
           </div>
         </div>
       </div>
@@ -308,39 +388,48 @@
         <div class="chapter-body">
           <h2 class="chapter-heading">
             <div class="line-wrap"><span class="line-inner">Building what</span></div>
-            <div class="line-wrap"><span class="line-inner">organisations</span></div>
-            <div class="line-wrap"><span class="line-inner">run on.</span></div>
+            <div class="line-wrap"><span class="line-inner">teams can use</span></div>
+            <div class="line-wrap"><span class="line-inner">and trust.</span></div>
           </h2>
           <div class="chapter-text">
-            <p>At KPMG, I work across data platforms, reporting pipelines, and automation workflows at enterprise scale. The work is less about individual cleverness and more about building systems that others can trust, understand, and extend.</p>
-            <p>Good data infrastructure is invisible. It just works. Getting there requires judgment about trade-offs, not just technical execution.</p>
+            <p>At KPMG, I have worked across data platforms, reporting pipelines, analytics workflows and automation projects at enterprise scale. The work has involved not only building reliable systems, but also making sure the outputs are useful, understandable and aligned with how teams actually work.</p>
+            <p>What matters most to me is building work that people can rely on, whether that means cleaner pipelines, clearer reporting, better operational visibility or less manual effort in a process.</p>
           </div>
           <div class="skills-grid" aria-label="Technical skills">
             <div class="skill-group">
-              <span class="skill-group-label">Data</span>
+              <span class="skill-group-label">Data, Analytics &amp; AI</span>
               <ul role="list">
-                <li>Pipeline architecture</li>
                 <li>Data modelling</li>
-                <li>ETL / ELT workflows</li>
                 <li>Reporting systems</li>
+                <li>ETL / ELT workflows</li>
+                <li>Insight generation</li>
               </ul>
             </div>
             <div class="skill-group">
-              <span class="skill-group-label">Engineering</span>
+              <span class="skill-group-label">Operations &amp; Automation</span>
               <ul role="list">
-                <li>Python · SQL · dbt</li>
-                <li>Azure · Databricks</li>
-                <li>Automation</li>
-                <li>Version control</li>
+                <li>Workflow improvement</li>
+                <li>Process automation</li>
+                <li>Stakeholder requirements</li>
+                <li>Data quality &amp; controls</li>
               </ul>
             </div>
             <div class="skill-group">
-              <span class="skill-group-label">Front End</span>
+              <span class="skill-group-label">Visualisation &amp; Delivery</span>
               <ul role="list">
-                <li>HTML · CSS · JS</li>
-                <li>React</li>
-                <li>Performance</li>
-                <li>Interaction design</li>
+                <li>Power BI · Figma · SQL</li>
+                <li>Dashboard design</li>
+                <li>UX-led reporting</li>
+                <li>Front-end development</li>
+              </ul>
+            </div>
+            <div class="skill-group">
+              <span class="skill-group-label">Languages &amp; Tools</span>
+              <ul role="list">
+                <li>Python · SQL · JavaScript</li>
+                <li>HTML · CSS · Swift</li>
+                <li>Azure DevOps · Alteryx</li>
+                <li>Agile · Scrum Master</li>
               </ul>
             </div>
           </div>
@@ -364,15 +453,81 @@
 
         <div class="work-grid">
 
-          <article class="work-card" aria-label="Project: Cellulose Scaffolds for Cultured Meat">
+          <article class="work-card" aria-label="Project: Data Reporting Platform Implementation">
             <div class="card-header">
               <span class="card-index">01</span>
+              <span class="card-type">Data Platforms · Reporting</span>
+            </div>
+            <h3 class="card-title">Data Reporting Platform Implementation</h3>
+            <p class="card-context">KPMG · Wealth &amp; Asset Management · Financial Services</p>
+            <p class="card-description">Led the front-end design and development of a Power BI reporting solution on a Microsoft Fabric data platform. Used Figma to prototype UX-led dashboards and engage stakeholders early, then designed and delivered Power BI semantic models and dashboards end-to-end, building a strong understanding of the full data lifecycle from ingestion and transformation through to modelling and visualisation.</p>
+            <p class="card-outcome">Provided a production-ready reporting layer on top of the Fabric platform that gave stakeholders clear, trustworthy views of key metrics and reduced manual effort in preparing management information.</p>
+            <div class="card-tags" aria-label="Tags">
+              <span>Microsoft Fabric</span>
+              <span>Power BI</span>
+              <span>Figma</span>
+              <span>Semantic Modelling</span>
+            </div>
+          </article>
+
+          <article class="work-card" aria-label="Project: Healthcare Product Development">
+            <div class="card-header">
+              <span class="card-index">02</span>
+              <span class="card-type">Healthcare · Data Products</span>
+            </div>
+            <h3 class="card-title">Healthcare Product Development</h3>
+            <p class="card-context">KPMG · Healthcare · Public Sector</p>
+            <p class="card-description">Worked on an Outpatient Improvement Data Assessment for stakeholders, helping define outpatient data needs and producing strategic recommendations with a delivery roadmap. Supported end-to-end delivery of more than twenty digital products alongside the Deputy Director of Product, including delivery reporting, coordination of stakeholder communications and creation of Figma wireframes and UI prototypes.</p>
+            <p class="card-outcome">Clarified data requirements for outpatient improvement, supported a portfolio of digital products and provided actionable recommendations that shaped how data would be used across the programme.</p>
+            <div class="card-tags" aria-label="Tags">
+              <span>PMO</span>
+              <span>Product Management</span>
+              <span>Product delivery</span>
+              <span>Figma</span>
+            </div>
+          </article>
+
+          <article class="work-card" aria-label="Project: UK Bus Network Live Data Reporting">
+            <div class="card-header">
+              <span class="card-index">03</span>
+              <span class="card-type">Open Data · Operations</span>
+            </div>
+            <h3 class="card-title">UK Bus Network Live Data Reporting</h3>
+            <p class="card-context">KPMG · Transport · Public Sector</p>
+            <p class="card-description">As a Change Analyst and consumer workstream lead, supported data publishers and the UK coach network in creating and uploading data to the Bus Open Data Service platform across TransXChange, ATCO-CIF, GTFS and SIRI-VM formats. Worked with publishers and consumers to resolve technical issues and queries, manage incidents and communicate changes and releases, with a focus on increasing active platform usage.</p>
+            <p class="card-outcome">Improved the quality and availability of bus open data, reduced friction for publishers and consumers and helped grow reliable use of the BODS platform across the coach network.</p>
+            <div class="card-tags" aria-label="Tags">
+              <span>Live data reporting</span>
+              <span>Open source data</span>
+              <span>Transport</span>
+            </div>
+          </article>
+
+          <article class="work-card" aria-label="Project: Trust Onboarding Data Controls">
+            <div class="card-header">
+              <span class="card-index">04</span>
+              <span class="card-type">Data · Operations</span>
+            </div>
+            <h3 class="card-title">Trust Onboarding Data Controls</h3>
+            <p class="card-context">Ludlow Trust · 2023</p>
+            <p class="card-description">Worked as a data consultant on the onboarding of newly procured trusts, focusing on accurate documentation and correct data capture to support regulatory compliance. Included reviewing and correcting records, flagging potential issues early and working closely with colleagues in a small team environment.</p>
+            <p class="card-outcome">Helped reduce the risk of future liabilities linked to data errors and strengthened basic data controls around new trust onboarding, while gaining experience in a smaller, more hands-on organisation.</p>
+            <div class="card-tags" aria-label="Tags">
+              <span>Data quality</span>
+              <span>Controls</span>
+              <span>Compliance</span>
+            </div>
+          </article>
+
+          <article class="work-card" aria-label="Project: Cellulose Scaffolds for Cultured Meat (MSc)">
+            <div class="card-header">
+              <span class="card-index">05</span>
               <span class="card-type">Research · Biomaterials</span>
             </div>
             <h3 class="card-title">Cellulose Scaffolds for Cultured Meat</h3>
-            <p class="card-context">MSc Research — UCL · 2021–22</p>
-            <p class="card-description">Developed biodegradable cellulose scaffolds from brewing industry by-products as growth substrates for cultivated muscle tissue. Work involved characterising scaffold porosity, mechanical properties, and cell adhesion behaviour across multiple iterations.</p>
-            <p class="card-outcome">A low-cost, circular-economy scaffold substrate addressing a key manufacturing cost barrier in cultivated meat production.</p>
+            <p class="card-context">MSc · UCL · 2022</p>
+            <p class="card-description">Investigated and developed cellulose-based scaffolds from brewing industry by-products as growth substrates for cultured meat. Work involved literature review, scaffold fabrication and cell culture using human embryonic kidney cells to assess viability and tissue formation.</p>
+            <p class="card-outcome">Demonstrated a low-cost, circular-economy scaffold approach with potential to support cell growth for cultured meat production.</p>
             <div class="card-tags" aria-label="Tags">
               <span>Biomaterials</span>
               <span>Cell culture</span>
@@ -380,52 +535,83 @@
             </div>
           </article>
 
-          <article class="work-card" aria-label="Project: Enterprise Data Platform">
+          <article class="work-card" aria-label="Project: Brain Blood Flow after Traumatic Injury">
             <div class="card-header">
-              <span class="card-index">02</span>
-              <span class="card-type">Data Engineering · Enterprise</span>
+              <span class="card-index">06</span>
+              <span class="card-type">Simulation · Data Modelling</span>
             </div>
-            <h3 class="card-title">Enterprise Data Platform Delivery</h3>
-            <p class="card-context">KPMG · 2023–Present</p>
-            <p class="card-description">Designed and delivered end-to-end data pipelines and transformation layers supporting analytics and reporting across large client organisations. Included schema design, pipeline orchestration, data quality validation, and stakeholder-facing reporting systems.</p>
-            <p class="card-outcome">Measurably improved data reliability and reduced time-to-insight across multiple business-critical functions.</p>
+            <h3 class="card-title">Brain Blood Flow after Traumatic Injury</h3>
+            <p class="card-context">MSc · UCL · 2021</p>
+            <p class="card-description">Used CAD, CFD and FEA tools to model brain vasculature and simulate blood flow in both healthy and post-traumatic brain injury cases. Combined geometry reconstruction with flow and structural analysis to understand how injury changes haemodynamics.</p>
+            <p class="card-outcome">Produced comparative models that highlighted differences in flow patterns and vessel loading between normal and post-TBI states, supporting further investigation into injury mechanisms.</p>
             <div class="card-tags" aria-label="Tags">
-              <span>Python</span>
-              <span>Azure</span>
-              <span>dbt</span>
-              <span>SQL</span>
+              <span>CFD</span>
+              <span>FEA</span>
+              <span>Data modelling</span>
             </div>
           </article>
 
-          <article class="work-card" aria-label="Project: Automated Reporting Workflow">
+          <article class="work-card" aria-label="Project: Biomedical Signal Processing">
             <div class="card-header">
-              <span class="card-index">03</span>
-              <span class="card-type">Automation · Reporting</span>
+              <span class="card-index">07</span>
+              <span class="card-type">Data Analysis · Signals</span>
             </div>
-            <h3 class="card-title">Automated Reporting Workflow</h3>
-            <p class="card-context">KPMG · 2024</p>
-            <p class="card-description">Built an automated pipeline replacing a recurring manual reporting process. The system ingests structured and semi-structured data, applies validated transformation logic, and produces distributable outputs on schedule - with exception alerting for anomalies.</p>
-            <p class="card-outcome">Eliminated several hours of weekly manual effort and removed a category of human-error risk from a high-visibility client process.</p>
+            <h3 class="card-title">Biomedical Signal Processing</h3>
+            <p class="card-context">BEng · University of Surrey · 2020</p>
+            <p class="card-description">Used MATLAB and signal processing techniques to analyse EEG, ECG and intracranial pressure data from multiple patients. Compared scalp and intracranial EEG for Alzheimer's disease and epilepsy, assessed ECG patterns for cardiac autonomic neuropathy and examined intracranial pressure profiles in hydrocephalus.</p>
+            <p class="card-outcome">Produced comparative analyses that highlighted differences between healthy and pathological signal patterns, and built practical experience in working with noisy biomedical time-series data.</p>
             <div class="card-tags" aria-label="Tags">
-              <span>Automation</span>
-              <span>Python</span>
-              <span>Orchestration</span>
+              <span>MATLAB</span>
+              <span>Signal processing</span>
+              <span>EEG · ECG · ICP</span>
             </div>
           </article>
 
-          <article class="work-card" aria-label="Project: Data Visualisation Interface">
+          <article class="work-card" aria-label="Project: Exoskeleton and Prosthetic Hand Design">
             <div class="card-header">
-              <span class="card-index">04</span>
+              <span class="card-index">08</span>
+              <span class="card-type">Medical Devices · CAD</span>
+            </div>
+            <h3 class="card-title">Exoskeleton and Prosthetic Hand Design</h3>
+            <p class="card-context">BEng · University of Surrey · 2019</p>
+            <p class="card-description">Contributed to the design of a motorised lower-limb exoskeleton for a patient with paralysis and a motorised prosthetic hand for a child amputee. Work included background research, CAD modelling, FEA-based testing and coordination within a multidisciplinary team.</p>
+            <p class="card-outcome">Developed functional concepts and tested designs that met user-specific constraints, while building skills in technical collaboration and communication.</p>
+            <div class="card-tags" aria-label="Tags">
+              <span>CAD</span>
+              <span>FEA</span>
+              <span>Medical devices</span>
+            </div>
+          </article>
+
+          <article class="work-card" aria-label="Project: OpenSim as a Gait Analysis Tool">
+            <div class="card-header">
+              <span class="card-index">09</span>
+              <span class="card-type">Simulation · Biomechanics</span>
+            </div>
+            <h3 class="card-title">OpenSim as a Gait Analysis Tool</h3>
+            <p class="card-context">BEng · University of Surrey · 2020</p>
+            <p class="card-description">Evaluated the suitability of OpenSim software for gait analysis by modelling, simulating and analysing lower-limb movement. Focused on whether the tool could estimate muscle forces during walking in a way that was practical for research and clinical use.</p>
+            <p class="card-outcome">Provided an evidence-based view on where OpenSim is most effective for gait analysis, and where its limitations appear in day-to-day application.</p>
+            <div class="card-tags" aria-label="Tags">
+              <span>Biomechanics</span>
+              <span>Simulation</span>
+              <span>Gait analysis</span>
+            </div>
+          </article>
+
+          <article class="work-card" aria-label="Project: Early Web Interfaces for Start-ups">
+            <div class="card-header">
+              <span class="card-index">10</span>
               <span class="card-type">Front End · Product</span>
             </div>
-            <h3 class="card-title">Data Visualisation Interface</h3>
-            <p class="card-context">Applied · 2024</p>
-            <p class="card-description">Designed and built a bespoke front-end interface for exploring and presenting pipeline data outputs. Focused on information hierarchy clarity, responsive layout, and interaction fidelity - without framework overhead. Built to be handed to non-technical stakeholders cold.</p>
-            <p class="card-outcome">A working presentation tool that required no onboarding. Data spoke for itself.</p>
+            <h3 class="card-title">Early Web Interfaces for Start-ups</h3>
+            <p class="card-context">Independent · 2022</p>
+            <p class="card-description">Designed and built small-scale websites for new business start-ups, focusing on clear structure, responsive layouts and basic interaction. Used HTML, CSS and JavaScript, supported by self-directed learning to extend front-end skills and patterns.</p>
+            <p class="card-outcome">Delivered working sites that gave early-stage businesses a simple, usable web presence and developed practical experience in front-end implementation.</p>
             <div class="card-tags" aria-label="Tags">
-              <span>JavaScript</span>
+              <span>HTML</span>
               <span>CSS</span>
-              <span>Data visualisation</span>
+              <span>JavaScript</span>
             </div>
           </article>
 
@@ -444,37 +630,37 @@
           <div class="about-left">
             <span class="section-label">About</span>
             <h2 class="about-heading">
-              <div class="line-wrap"><span class="line-inner">Built for</span></div>
-              <div class="line-wrap"><span class="line-inner">hard problems.</span></div>
+              <div class="line-wrap"><span class="line-inner">Working across</span></div>
+              <div class="line-wrap"><span class="line-inner">data and decisions.</span></div>
             </h2>
           </div>
 
           <div class="about-right">
             <div class="about-bio">
-              <p>I'm a data engineer and front-end developer with an unusual background. I started in biomedical engineering, spent time doing materials research in biotech, and eventually found my way to data systems - where I've worked ever since.</p>
-              <p>Currently at KPMG, I build data platforms, pipelines, and automation workflows that real organisations depend on. At that scale, the quality of your decisions matters more than the speed of your execution.</p>
-              <p>Outside work, I rowed for Team GB. The discipline that requires - managing performance across months of preparation, staying effective when conditions are bad, knowing when to push and when to hold - shapes how I approach engineering work more than any course I've taken.</p>
-              <p>I'm currently training for Ironman. Same logic applies.</p>
+              <p>I work across data engineering, reporting, visualisation and automation, with a background that started in biomedical engineering and biotech research before moving into data systems. That mix has shaped how I approach problems: technically, but always with the end use in mind.</p>
+              <p>At KPMG, I have worked on data platforms, reporting workflows and stakeholder-facing tools used across complex organisations. I am most interested in the point where good data, clear communication and practical delivery come together.</p>
+              <p>A lot of my work sits between disciplines: understanding requirements, shaping information, improving processes and building systems that are reliable enough for others to depend on.</p>
+              <p>Outside work, sport has been a steady thread for me, from rugby to rowing and now triathlon. I like the mix of discipline, teamwork and gradual progress that each has demanded at different points in my life.</p>
             </div>
 
             <div class="principles">
               <h3 class="principles-heading">How I build</h3>
               <ul class="principles-list" role="list">
                 <li>
-                  <span class="principle-rule">Correctness before speed.</span>
-                  A fast pipeline that produces wrong numbers is worse than no pipeline at all.
+                  <span class="principle-rule">Clarity before complexity.</span>
+                  Whether it is a pipeline, a dashboard or a process, the work should be understandable before it becomes sophisticated.
                 </li>
                 <li>
                   <span class="principle-rule">Understand the system, not just the task.</span>
-                  Most engineering problems are downstream effects of upstream decisions.
+                  Good decisions usually depend on seeing the upstream context, downstream impact and the trade-offs in between.
                 </li>
                 <li>
                   <span class="principle-rule">Design for the next person.</span>
-                  Code that only its author can maintain is a liability, not an asset.
+                  Useful work is work that someone else can trust, maintain and build on.
                 </li>
                 <li>
-                  <span class="principle-rule">Simplicity is the work.</span>
-                  Complexity is easy. Clarity takes sustained effort.
+                  <span class="principle-rule">Make improvement practical.</span>
+                  The best solutions do not just look good in theory; they reduce effort, improve visibility or make better decisions easier in practice.
                 </li>
               </ul>
             </div>
@@ -497,7 +683,7 @@
             <h2 class="contact-heading">
               <div class="line-wrap"><span class="line-inner">Let's talk.</span></div>
             </h2>
-            <p class="contact-sub">Open to senior data engineering, platform engineering, and AI-adjacent roles. Particularly interested in teams doing technically serious work at scale.</p>
+            <p class="contact-sub">Open to roles across data engineering, data visualisation, analytics and automation. Particularly interested in work that combines technical depth with clear decision-making, operational improvement or stakeholder-facing delivery.</p>
           </div>
 
           <div class="contact-body">
@@ -505,8 +691,7 @@
               conradforbes3@gmail.com
             </a>
             <nav class="contact-links" aria-label="External links">
-              <a href="https://linkedin.com/in/conradforbes" class="contact-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="https://github.com/conradforbes" class="contact-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://www.linkedin.com/in/conrad-forbes-999373225/" class="contact-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               <a href="assets/Conrad_Forbes_CV.pdf" class="contact-link" download>Download CV</a>
             </nav>
           </div>

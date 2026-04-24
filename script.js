@@ -194,7 +194,7 @@
   ============================================================ */
   function initChapterReveals() {
     const chapters = gsap.utils.toArray('.chapter');
-    const BESPOKE  = new Set(['chapter-lab', 'chapter-shift']);
+    const BESPOKE  = new Set(['chapter-lab', 'chapter-shift', 'chapter-origin']);
 
     chapters.forEach(chapter => {
       if (BESPOKE.has(chapter.id)) return;
@@ -347,6 +347,95 @@
   }
 
   /* ============================================================
+     8b. CHAPTER 01 — ORIGIN MAP (Aberdeen → London route)
+  ============================================================ */
+  function initOriginMap() {
+    const originSection = document.getElementById('chapter-origin');
+    if (!originSection) return;
+
+    const lines    = originSection.querySelectorAll('.line-inner');
+    const textBody = originSection.querySelector('.chapter-text');
+    const mapEl    = originSection.querySelector('.origin-map');
+    const mapSvg   = originSection.querySelector('.uk-map-svg');
+    const route    = originSection.querySelector('.uk-route');
+    const nodeStart     = originSection.querySelector('.map-node-start');
+    const nodeEnd       = originSection.querySelector('.map-node-end');
+    const haloEnd       = originSection.querySelector('.map-halo-end');
+    const labelEnd      = originSection.querySelector('.map-label-end');
+    const caption       = originSection.querySelector('.map-caption');
+
+    /* Reduced-motion: reveal everything statically */
+    if (prefersReducedMotion) {
+      gsap.set(lines, { y: 0 });
+      if (textBody) gsap.set(textBody, { opacity: 1 });
+      if (mapEl)    gsap.set(mapEl, { opacity: 1 });
+      if (route)    gsap.set(route, { strokeDashoffset: 0 });
+      if (nodeStart) gsap.set(nodeStart, { opacity: 1 });
+      if (nodeEnd)   gsap.set(nodeEnd, { opacity: 1 });
+      if (haloEnd)   gsap.set(haloEnd, { opacity: 1 });
+      if (labelEnd)  gsap.set(labelEnd, { opacity: 1 });
+      if (caption)   gsap.set(caption, { opacity: 1 });
+      return;
+    }
+
+    /* Mobile / tablet: no map — simple heading + text reveal */
+    if (window.innerWidth <= 1024) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: originSection,
+          start:   'top 72%',
+          toggleActions: 'play none none none',
+        },
+      });
+      if (lines.length) tl.to(lines, { y: 0, duration: 0.9, stagger: 0.1, ease: EASE_CIRC });
+      if (textBody) tl.fromTo(textBody, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.7, ease: EASE_OUT }, '-=0.5');
+      return;
+    }
+
+    /* Desktop: play-on-enter — no pin, no scrub.
+       Everything plays automatically when the section scrolls into view. */
+    const routeLen = route.getTotalLength ? route.getTotalLength() : 450;
+    gsap.set(route, { strokeDasharray: routeLen, strokeDashoffset: routeLen });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: originSection,
+        start:   'top 65%',
+        toggleActions: 'play none none none',
+      },
+      defaults: { ease: EASE_OUT },
+    });
+
+    /* Map panel fades in immediately */
+    tl.to(mapEl, { opacity: 1, duration: 0.5 }, 0);
+
+    /* Aberdeen dot */
+    tl.to(nodeStart, { opacity: 0.85, duration: 0.3 }, 0.1);
+
+    /* Heading lines slide up */
+    if (lines.length) {
+      tl.to(lines, { y: 0, duration: 0.9, stagger: 0.1, ease: EASE_CIRC }, 0.15);
+    }
+
+    /* Text body */
+    if (textBody) {
+      tl.fromTo(textBody,
+        { opacity: 0, y: 16 },
+        { opacity: 1, y: 0, duration: 0.7 },
+        0.5
+      );
+    }
+
+    /* Route draws from Aberdeen south to London over 1.4 s */
+    tl.to(route, { strokeDashoffset: 0, duration: 1.4, ease: 'power1.inOut' }, 0.3);
+
+    /* London node + halo pop in once route is nearly done */
+    tl.to([nodeEnd, haloEnd], { opacity: 0.9, duration: 0.4 }, 1.5);
+    tl.to(labelEnd,           { opacity: 1,   duration: 0.3 }, 1.65);
+    tl.to(caption,            { opacity: 1,   duration: 0.4 }, 1.7);
+  }
+
+  /* ============================================================
      9. WORK CARDS — staggered reveal
   ============================================================ */
   function initWorkCards() {
@@ -494,6 +583,7 @@
     initNavigation();
     initScrollProgress();
     initChapterReveals();
+    initOriginMap();
     initListReveals();
     initLabSection();
     initWorkTitle();
