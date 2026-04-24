@@ -806,12 +806,11 @@ button {
 
 /* Lab tags */
 .lab-tags {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--s-xs);
   margin-top: var(--s-lg);
   opacity: 0;
-  max-width: 480px;
 }
 
 .lab-tag {
