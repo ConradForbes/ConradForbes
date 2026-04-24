@@ -728,7 +728,7 @@ button {
 
 /* Widen origin chapter-inner to include map column */
 #chapter-origin .chapter-inner {
-  grid-template-columns: 200px 1fr 180px;
+  grid-template-columns: 200px 1fr 240px;
   align-items: center;
 }
 
@@ -744,7 +744,7 @@ button {
 
 .uk-map-svg {
   width: 100%;
-  max-width: 160px;
+  max-width: 240px;
   color: var(--text-faint);
   overflow: visible;
 }
