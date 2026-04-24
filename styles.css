@@ -300,6 +300,21 @@ button {
 
 .nav-logo:hover { opacity: 0.5; }
 
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-built {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+  opacity: 0.6;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
